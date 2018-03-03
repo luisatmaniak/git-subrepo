@@ -512,7 +512,7 @@ subrepo:init() {
 
   o "Commit new subrepo to the '$original_head_branch' branch."
   subrepo_commit_ref="$original_head_commit"
-  RUN git commit -m "$(get-commit-message)"
+  RUN git commit -m "$(get-commit-message)" --no-verify
 
   o "Create ref '$refs_subrepo_commit'."
   git:make-ref "$refs_subrepo_commit" "$subrepo_commit_ref"
