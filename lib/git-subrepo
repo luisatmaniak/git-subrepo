@@ -849,7 +849,7 @@ subrepo:commit() {
 
   o "Commit to the '$original_head_branch' branch."
   if [[ $original_head_commit != none ]]; then
-    RUN git commit $edit_flag -m "$commit_message"
+    RUN git commit $edit_flag -m "$commit_message" --no-verify
   else
     # We had cloned into an empty repo, side effect of prior git reset --mixed
     # command is that subrepo's history is now part of the index. Commit
